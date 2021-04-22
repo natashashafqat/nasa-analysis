@@ -12,6 +12,7 @@ import java.util.Properties;
 
 public class ApiFetcher {
     Config config = new Config();
+
     public Epic[] fetchData() throws IOException {
         Epic[] epicData = null;
         URL url = buildNasaUrl();
