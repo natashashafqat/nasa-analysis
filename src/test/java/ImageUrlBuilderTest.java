@@ -3,6 +3,9 @@ import epic.enums.ImageType;
 import epic.entities.ImageUrl;
 import epic.ImageUrlBuilder;
 import org.junit.Test;
+
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 public class ImageUrlBuilderTest {
@@ -15,7 +18,7 @@ public class ImageUrlBuilderTest {
     }
 
     @Test
-    public void itShouldBuildTheCorrectUrl() {
+    public void itShouldBuildTheCorrectUrl() throws IOException {
         String imageName = "epic_RGB_20151031003633_01";
 
         ImageUrl imageUrl = new ImageUrl();

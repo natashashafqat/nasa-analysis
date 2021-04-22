@@ -9,8 +9,10 @@ import epic.entities.ImageUrl;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class ImageUrlBuilder {
+    Config config = new Config();
     Integer LENGTH_OF_DATE = 8;
 
     public List<String> getImageUrls() throws IOException {
@@ -35,8 +37,9 @@ public class ImageUrlBuilder {
         return imageUrls;
     }
 
-    public String buildUrl(ImageUrl imageUrl, String imageName) {
-        String baseUrl = "https://epic.gsfc.nasa.gov/archive/";
+    public String buildUrl(ImageUrl imageUrl, String imageName) throws IOException {
+        Properties properties = config.getProperties();
+        String baseUrl = properties.getProperty("BASE_URL");
         StringBuilder fullUrl = new StringBuilder();
 
         fullUrl

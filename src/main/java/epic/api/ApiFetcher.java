@@ -1,9 +1,9 @@
 package epic.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import epic.Config;
 import epic.entities.Epic;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -11,6 +11,7 @@ import java.net.URL;
 import java.util.Properties;
 
 public class ApiFetcher {
+    Config config = new Config();
     public Epic[] fetchData() throws IOException {
         Epic[] epicData = null;
         URL url = buildNasaUrl();
@@ -31,20 +32,11 @@ public class ApiFetcher {
     }
 
     public URL buildNasaUrl() throws IOException {
-        Properties properties = new Properties();
-        String propertiesFileName = "application.properties";
+        Properties properties = config.getProperties();
 
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propertiesFileName);
-
-        if (inputStream != null) {
-            properties.load(inputStream);
-        }
-        else {
-            throw new FileNotFoundException("Property file: " + propertiesFileName + " not found.");
-        }
-
+        String apiUrl = properties.getProperty("API_URL");
         String apiKey = properties.getProperty("API_KEY");
-        URL url = new URL("https://api.nasa.gov/EPIC/api/natural?api_key=" + apiKey);
+        URL url = new URL(apiUrl + apiKey);
 
         return url;
     }
