@@ -1,7 +1,7 @@
-import enums.Collection;
-import enums.ImageType;
-import entities.ImageUrl;
-import nasa.ImageUrlBuilder;
+import epic.enums.Collection;
+import epic.enums.ImageType;
+import epic.entities.ImageUrl;
+import epic.ImageUrlBuilder;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

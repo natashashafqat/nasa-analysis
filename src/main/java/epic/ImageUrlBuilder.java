@@ -1,10 +1,10 @@
-package nasa;
+package epic;
 
-import api.ApiFetcher;
-import enums.Collection;
-import enums.ImageType;
-import entities.Epic;
-import entities.ImageUrl;
+import epic.api.ApiFetcher;
+import epic.enums.Collection;
+import epic.enums.ImageType;
+import epic.entities.Epic;
+import epic.entities.ImageUrl;
 
 import java.io.IOException;
 import java.util.ArrayList;

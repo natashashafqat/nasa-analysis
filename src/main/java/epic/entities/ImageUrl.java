@@ -1,7 +1,7 @@
-package entities;
+package epic.entities;
 
-import enums.Collection;
-import enums.ImageType;
+import epic.enums.Collection;
+import epic.enums.ImageType;
 
 public class ImageUrl {
     public Collection collection;
