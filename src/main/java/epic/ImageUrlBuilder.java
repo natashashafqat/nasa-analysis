@@ -14,10 +14,10 @@ import java.util.Properties;
 public class ImageUrlBuilder {
     Config config = new Config();
     Integer LENGTH_OF_DATE = 8;
+    ApiFetcher apiFetcher = new ApiFetcher();
 
     public List<String> getImageUrls() throws IOException {
-        ApiFetcher apiFetcher = new ApiFetcher();
-        Epic[] epicData = apiFetcher.fetchData();
+        Epic[] epicData = (Epic[]) apiFetcher.fetchData(config);
         List<String> imageUrls = new ArrayList<String>(epicData.length);
 
         for (Epic epicImage : epicData) {
@@ -38,7 +38,7 @@ public class ImageUrlBuilder {
     }
 
     public String buildUrl(ImageUrl imageUrl, String imageName) throws IOException {
-        Properties properties = config.getProperties();
+        Properties properties = config.getProperties(apiFetcher.projectName());
         String baseUrl = properties.getProperty("BASE_URL");
         StringBuilder fullUrl = new StringBuilder();
 

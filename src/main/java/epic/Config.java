@@ -6,9 +6,9 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Config {
-    public java.util.Properties getProperties() throws IOException {
+    public java.util.Properties getProperties(String project) throws IOException {
         Properties properties = new java.util.Properties();
-        String propertiesFileName = "epic.properties";
+        String propertiesFileName = project + ".properties";
 
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propertiesFileName);
 
