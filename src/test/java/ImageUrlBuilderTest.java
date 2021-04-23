@@ -1,15 +1,15 @@
-import epic.enums.Collection;
-import epic.enums.ImageType;
-import epic.entities.ImageUrl;
-import epic.ImageUrlBuilder;
+import enums.Collection;
+import enums.ImageType;
+import entities.ImageUrl;
 import org.junit.Test;
+import utils.EpicImageUrlBuilder;
 
 import java.io.IOException;
 
 import static org.junit.Assert.*;
 
 public class ImageUrlBuilderTest {
-    ImageUrlBuilder imageUrlBuilder = new ImageUrlBuilder();
+    EpicImageUrlBuilder imageUrlBuilder = new EpicImageUrlBuilder();
     @Test
     public void itShouldExtractDateFromImageName() {
         String imageName = "epic_RGB_20151031003633_01";
