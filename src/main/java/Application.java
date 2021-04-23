@@ -1,3 +1,6 @@
+import apod.api.ApiFetcher;
+import apod.entities.APOD;
+import epic.Config;
 import epic.ImageUrlBuilder;
 
 import java.awt.*;
@@ -7,9 +10,15 @@ import java.util.List;
 
 public class Application {
     public static void main(String args[]) throws IOException {
-        ImageUrlBuilder imageUrlBuilder = new ImageUrlBuilder();
-        List<String> epicImages = imageUrlBuilder.getImageUrls();
+        ApiFetcher apiFetcher = new ApiFetcher();
+        Config config = new Config();
+
+        ImageUrlBuilder epicImageUrlBuilder = new ImageUrlBuilder();
+        List<String> epicImages = epicImageUrlBuilder.getImageUrls();
         openEpicImages(epicImages);
+
+        APOD data = (APOD) apiFetcher.fetchData(config);
+        System.out.println(data.explanation);
     }
 
     private static void openEpicImages(List<String> imageUrls) throws IOException {
