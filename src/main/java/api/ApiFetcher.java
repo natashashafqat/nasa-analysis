@@ -1,4 +1,4 @@
-package interfaces;
+package api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -10,7 +10,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Properties;
 
-public abstract class Fetcher<T> {
+public abstract class ApiFetcher<T> {
 
     public abstract TypeReference<T> getTypeReference();
 

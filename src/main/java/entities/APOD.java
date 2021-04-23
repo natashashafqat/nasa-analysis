@@ -1,4 +1,4 @@
-package apod.entities;
+package entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

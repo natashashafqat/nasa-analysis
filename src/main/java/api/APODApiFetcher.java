@@ -1,10 +1,9 @@
-package apod.api;
+package api;
 
-import apod.entities.APOD;
+import entities.APOD;
 import com.fasterxml.jackson.core.type.TypeReference;
-import interfaces.Fetcher;
 
-public class ApiFetcher extends Fetcher {
+public class APODApiFetcher extends ApiFetcher {
 
     @Override
     public TypeReference<APOD> getTypeReference() {

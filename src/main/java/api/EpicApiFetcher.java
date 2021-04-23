@@ -1,10 +1,9 @@
-package epic.api;
+package api;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import epic.entities.Epic;
-import interfaces.Fetcher;
+import entities.Epic;
 
-public class ApiFetcher extends Fetcher {
+public class EpicApiFetcher extends ApiFetcher {
 
     @Override
     public TypeReference<Epic[]> getTypeReference() {

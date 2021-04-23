@@ -1,4 +1,4 @@
-package epic.enums;
+package enums;
 
 public enum ImageType {
     png, jpg, thumbs

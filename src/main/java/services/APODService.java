@@ -1,13 +1,13 @@
 package services;
 
-import apod.api.ApiFetcher;
-import apod.entities.APOD;
-import epic.Config;
+import api.APODApiFetcher;
+import entities.APOD;
+import config.Config;
 
 import java.io.IOException;
 
 public class APODService {
-    static ApiFetcher apiFetcher = new ApiFetcher();
+    static APODApiFetcher apiFetcher = new APODApiFetcher();
     static Config config = new Config();
 
     public static void getPictureOfTheDay() throws IOException {

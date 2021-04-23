@@ -1,6 +1,6 @@
 package services;
 
-import epic.ImageUrlBuilder;
+import utils.EpicImageUrlBuilder;
 
 import java.awt.*;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class EpicService {
     public static void openEpicImages() throws IOException {
-        ImageUrlBuilder epicImageUrlBuilder = new ImageUrlBuilder();
+        EpicImageUrlBuilder epicImageUrlBuilder = new EpicImageUrlBuilder();
         List<String> epicImages = epicImageUrlBuilder.getImageUrls();
 
         if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {

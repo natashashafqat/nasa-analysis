@@ -1,20 +1,21 @@
-package epic;
+package utils;
 
-import epic.api.ApiFetcher;
-import epic.enums.Collection;
-import epic.enums.ImageType;
-import epic.entities.Epic;
-import epic.entities.ImageUrl;
+import api.EpicApiFetcher;
+import config.Config;
+import entities.Epic;
+import entities.ImageUrl;
+import enums.Collection;
+import enums.ImageType;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class ImageUrlBuilder {
+public class EpicImageUrlBuilder {
     Config config = new Config();
     Integer LENGTH_OF_DATE = 8;
-    ApiFetcher apiFetcher = new ApiFetcher();
+    EpicApiFetcher apiFetcher = new EpicApiFetcher();
 
     public List<String> getImageUrls() throws IOException {
         Epic[] epicData = (Epic[]) apiFetcher.fetchData(config);

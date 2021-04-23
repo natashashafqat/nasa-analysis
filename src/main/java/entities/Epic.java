@@ -1,4 +1,4 @@
-package epic.entities;
+package entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
